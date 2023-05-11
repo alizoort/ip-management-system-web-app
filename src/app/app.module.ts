@@ -6,27 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AppConfig } from './config';
-import { FormioAppConfig } from '@formio/angular';
+import { FormioAppConfig, FormioModule } from '@formio/angular';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormioModule
   ],
-  providers: [   {provide: FormioAppConfig, useValue: AppConfig},
-    FormioResources,
-    FormioAuthService,
-    {provide: FormioAuthConfig, useValue: {
-      login: {
-        form: 'user/login'
-      },
-      register: {
-        form: 'user/register'
-      }
-    }}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

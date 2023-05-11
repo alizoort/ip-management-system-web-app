@@ -9,19 +9,8 @@ import { FormioAuthService } from '@formio/angular/auth';
 export class AppComponent {
   title = 'eventmanager';
   constructor(
-    public auth: FormioAuthService,
     private router: Router
   ) {
-    this.auth.onLogin.subscribe(() => {
-      this.router.navigate(['/']);
-    });
 
-    this.auth.onLogout.subscribe(() => {
-      this.router.navigate(['/auth/login']);
-    });
-
-    this.auth.onRegister.subscribe(() => {
-      this.router.navigate(['/']);
-    });
   }
 }
