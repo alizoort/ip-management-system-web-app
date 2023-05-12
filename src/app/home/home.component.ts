@@ -14,15 +14,12 @@ export class HomeComponent implements OnInit {
   }
   ngAfterViewInit(){
     this.configService.getCamundaCurrentTaskScreen().subscribe((event)=>{
-      let currentUrl :string =event.currentTaskScreen; 
       Formio.createForm(document.getElementById('formio'),event.currentTaskScreen.substring(1,event.currentTaskScreen.length-1))
       .then(function(form) {
         form.on('submit', (submission) => {
-          console.log("EVENT ",event)
         this.configService.completeBpmnInstanceTask(event.currentTaskId).subscribe((response)=>{
           this.configService.getCamundaCurrentTaskScreen().subscribe((emittedEvent)=>{
-            console.log("current TASK SCREEN ",emittedEvent);
-            window.location.href=emittedEvent.currentTaskScreen;
+           setTimeout(function(){window.location.reload();},2000)
           })
         })
         });
