@@ -1,16 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-
+import { AuthGuard } from './shared/guards/auth-guard.guard';
 const routes: Routes = [
-  {
-    path: '',
-    component: HomeComponent
-  },
+   {path:'landing',loadChildren: ()=> import('./landing/landing.module').then(m=>m.LandingModule),canActivate:[AuthGuard]},
+   {path: 'auth',loadChildren: ()=> import('./login/login.module').then(m=>m.LoginModule)},
+   { path: '**', pathMatch: 'full', redirectTo: 'landing' }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: []
 })
 export class AppRoutingModule { }

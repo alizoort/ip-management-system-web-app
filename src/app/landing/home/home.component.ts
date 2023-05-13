@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Formio } from 'formiojs';
-import { ConfigService } from '../config.service';
+import { ConfigService } from '../../config.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 @Component({
   selector: 'app-home',
