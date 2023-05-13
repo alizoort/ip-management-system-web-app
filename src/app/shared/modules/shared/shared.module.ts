@@ -6,6 +6,8 @@ import { InterceptorsModule } from '../interceptors/interceptors.module';
 import { GuardsModule } from '../guards/guards.module';
 import { ServicesModule } from '../services/services.module';
 import { AppService } from '../../services/app.service';
+import { MaterialModule } from '../material/material.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -14,7 +16,8 @@ import { AppService } from '../../services/app.service';
   imports: [CommonModule,
     FormioModule,
     FormsModule,
-    ReactiveFormsModule],
+    ReactiveFormsModule
+],
   exports: [
     CommonModule,
     FormioModule,
@@ -30,9 +33,11 @@ export class SharedModule {
       providers: [
         InterceptorsModule.forShared(),
         GuardsModule.forShared(),
-        ServicesModule.forShared()
+        ServicesModule.forShared(),
+    
       ]
     };
   }
 }
+
 

@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/modules/shared/shared.module';
+import { NgxSpinnerModule } from 'ngx-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -15,6 +16,7 @@ import { SharedModule } from './shared/modules/shared/shared.module';
     HttpClientModule,
     AppRoutingModule,
     SharedModule.forRoot(),
+    NgxSpinnerModule.forRoot({ type: 'ball-scale-multiple' }),
   ],
   bootstrap: [AppComponent],
   providers: []

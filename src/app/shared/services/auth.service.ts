@@ -21,6 +21,7 @@ export class AuthService extends AppService{
     }).pipe(
       tap((response :any)=> {
         console.log("Response ",response.accessToken)
+        localStorage.setItem("username",response.username)
         this.setJwtToken(response.accessToken)
       })
     )

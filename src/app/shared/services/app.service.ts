@@ -27,7 +27,7 @@ export class AppService {
         return this.http.put(environment.baseUrl+ endpoint,body,{...options,...{headers: {"Authorization": `Bearer ${this.getLocalAuthToken()}`}}});
     }
     public patch(endpoint: string,body:any,options:any=defaultHttpHeaders):Observable<any>{
-      return this.http.post<any>(environment.baseUrl+endpoint,body,{...options,...{headers: {"Authorization": `Bearer ${this.getLocalAuthToken()}`}}})
+      return this.http.patch<any>(environment.baseUrl+endpoint,body,{...options,...{headers: {"Authorization": `Bearer ${this.getLocalAuthToken()}`}}})
     }
 }
 
