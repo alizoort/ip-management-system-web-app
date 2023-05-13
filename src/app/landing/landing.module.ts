@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
-import { ConfigService } from '../config.service';
 import { LandingWrapperComponent } from './landing-wrapper/landing-wrapper.component';
 import { LandingRoutingModule } from './landing-routing.module';
 import { SharedModule } from '../shared/modules/shared/shared.module';
+import { CamundaService } from '../shared/services/camunda.service';
 
 
 
@@ -17,6 +17,6 @@ import { SharedModule } from '../shared/modules/shared/shared.module';
     LandingRoutingModule,
     SharedModule
   ],
-  providers: [ConfigService,]
+  providers: [CamundaService,]
 })
 export class LandingModule { }

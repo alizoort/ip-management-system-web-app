@@ -5,6 +5,7 @@ import { FormioModule } from '@formio/angular';
 import { InterceptorsModule } from '../interceptors/interceptors.module';
 import { GuardsModule } from '../guards/guards.module';
 import { ServicesModule } from '../services/services.module';
+import { AppService } from '../../services/app.service';
 
 
 
@@ -19,7 +20,8 @@ import { ServicesModule } from '../services/services.module';
     FormioModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+  ],
+  providers: []
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders<SharedModule> {

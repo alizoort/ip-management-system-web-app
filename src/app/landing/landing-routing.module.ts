@@ -5,7 +5,7 @@ import { LandingWrapperComponent } from "./landing-wrapper/landing-wrapper.compo
 const routes : Routes =[
     {
         path: '',component: LandingWrapperComponent,children: [
-            {path:'', redirectTo:'home'},
+            {path:'', pathMatch:'full',redirectTo:'home'},
             {
                 path: 'home',component: HomeComponent
             }
