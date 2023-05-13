@@ -10,6 +10,7 @@ export class AuthService extends AppService{
   setJwtToken(token: string){
     localStorage.setItem("authToken",token)
   }
+  loggedInUser: any;
   constructor(public http:HttpClient) {
     super(http);
   }
@@ -22,6 +23,15 @@ export class AuthService extends AppService{
         console.log("Response ",response.accessToken)
         this.setJwtToken(response.accessToken)
       })
+    )
+  }
+  getLoggedInUser(){
+    return this.get("/api/auth/loggedInUser").pipe(
+      tap(
+        (response:any)=>{
+          this.loggedInUser=response
+        }
+      )
     )
   }
 }

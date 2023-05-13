@@ -9,18 +9,20 @@ export class CamundaService extends AppService {
   constructor(public http:HttpClient){
     super(http);
    }
-  public getCamundaCurrentTaskScreen(){
+  public getCamundaCurrentTaskScreen(username:string,bpmnProcessId: string){
     return this.post("/ip-management-system/currentScreenUrl",{
-        "username":"ali",
-        "bpmnProcessId":"IPManagementBusinessProcess"
+        "username":username,
+        "bpmnProcessId":bpmnProcessId
     })
   }
-  public completeBpmnInstanceTask(taskId:string){
-    return this.http.patch<any>("/ip-management-system/completeProcessInstance",{
-        "username":"ali",
-        "bpmnProcessId":"IPManagementBusinessProcess",
+  public completeBpmnInstanceTask(username:string,taskId:string,bpmnProcessId:string,decisionVariables:any){
+    return this.patch(
+      "/ip-management-system/completeProcessInstance",{
+        "username":username,
+        "bpmnProcessId":bpmnProcessId,
         "taskId":taskId,
-        "variables":[{"name":"nationality","value":"lebanese"}]
-    });
+        "variables":decisionVariables
+    }
+    )
   }
 }
