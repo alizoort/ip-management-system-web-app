@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
       this.camundaService.getCamundaCurrentTaskScreen(loggedInUser.username,this.bpmnProcessId).subscribe({
         next: (event)=>{
           
-            Formio.createForm(document.getElementById('formio'),event.currentTaskScreen.substring(1,event.currentTaskScreen.length-1))
+            Formio.createForm(document.getElementById('formio'),event.currentTaskScreen)
             .then(function(form) {
               form.on('submit', (submission) => {
                 this.spinnerService.show();
