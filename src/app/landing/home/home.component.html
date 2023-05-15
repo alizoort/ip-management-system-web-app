@@ -3,8 +3,9 @@
         <div class="left-container">
             <p class="app-title">IP Management System</p>
         </div>
-        <div class="right-container" (click)="sidenav.toggle()">
-            <mat-icon>menu</mat-icon>
+        <div class="right-container">
+            <mat-icon  (click)="sidenav.toggle()">menu</mat-icon>
+            <mat-icon (click)="logout($event)">power_settings_new</mat-icon>
         </div>
     </div>
     <div class="sidenav-view">
