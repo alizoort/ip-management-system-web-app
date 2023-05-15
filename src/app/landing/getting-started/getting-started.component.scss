@@ -1,0 +1,41 @@
+.description-content {
+    font-size: 40px;
+    font-weight: lighter;
+    max-width: 400px;
+    text-align: center;
+}
+.getting-started-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    width: 100%
+}
+.panel-container {
+    display: flex;
+    justify-content: center;
+}
+.inner-container {
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    height: 100%;
+    width:100%
+}
+.start-demo-container{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 40px;
+    padding-left: 40px;
+    background-color: #FC5D0D;
+    border-radius: 35px;
+    margin: 10px
+}
+.app-info-container {
+    padding: 20px;
+    border-radius: 10px;
+    border-color: white;
+    border-width: 5px;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+}

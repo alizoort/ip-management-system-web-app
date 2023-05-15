@@ -8,6 +8,7 @@ import { ServicesModule } from '../services/services.module';
 import { AppService } from '../../services/app.service';
 import { MaterialModule } from '../material/material.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ThirdPartiesModule } from '../third-parties/third-parties.module';
 
 
 
@@ -16,13 +17,15 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   imports: [CommonModule,
     FormioModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ThirdPartiesModule,
 ],
   exports: [
     CommonModule,
     FormioModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ThirdPartiesModule,
   ],
   providers: []
 })

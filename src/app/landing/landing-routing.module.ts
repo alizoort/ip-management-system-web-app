@@ -2,12 +2,17 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./home/home.component";
 import { LandingWrapperComponent } from "./landing-wrapper/landing-wrapper.component";
+import { GettingStartedComponent } from "./getting-started/getting-started.component";
+import { BpmnProcessWrapperComponent } from "./bpmn-process-wrapper/bpmn-process-wrapper.component";
 const routes : Routes =[
     {
-        path: '',component: LandingWrapperComponent,children: [
+        path: '',component: HomeComponent,children: [
             {path:'', pathMatch:'full',redirectTo:'home'},
             {
-                path: 'home',component: HomeComponent
+                path: 'home',component: GettingStartedComponent
+            },
+            {
+                path: 'activeprocess',component: BpmnProcessWrapperComponent
             }
         ]
     }

@@ -5,6 +5,8 @@ import { LandingWrapperComponent } from './landing-wrapper/landing-wrapper.compo
 import { LandingRoutingModule } from './landing-routing.module';
 import { SharedModule } from '../shared/modules/shared/shared.module';
 import { CamundaService } from '../shared/services/camunda.service';
+import { BpmnProcessWrapperComponent } from './bpmn-process-wrapper/bpmn-process-wrapper.component';
+import { GettingStartedComponent } from './getting-started/getting-started.component';
 
 
 
@@ -12,6 +14,8 @@ import { CamundaService } from '../shared/services/camunda.service';
   declarations: [
     HomeComponent,
     LandingWrapperComponent,
+    BpmnProcessWrapperComponent,
+    GettingStartedComponent,
   ],
   imports: [
     LandingRoutingModule,
