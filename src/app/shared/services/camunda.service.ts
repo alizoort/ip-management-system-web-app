@@ -5,7 +5,8 @@ import { catchError, retry } from 'rxjs/operators';
 import { AppService } from './app.service';
 @Injectable()
 export class CamundaService extends AppService {
- 
+
+  selectedForm :any;
   constructor(public http:HttpClient){
     super(http);
    }

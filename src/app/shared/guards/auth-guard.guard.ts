@@ -13,9 +13,13 @@ export class AuthGuard implements CanActivate {
   }
   checkLogin(url:string):boolean | UrlTree{
     let val = localStorage.getItem('authToken');
+    let ioAuthToken = localStorage.getItem("ioAuthToken")
     if(val){
      if(url == "/auth"){
          return this.router.parseUrl('/landing');
+     }
+     else if(!ioAuthToken){
+      return this.router.parseUrl('/auth/formiologin')
      }
      else {
          return true;

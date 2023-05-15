@@ -6,6 +6,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginRoutingModule } from './login-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/modules/shared/shared.module';
+import { FormIoLoginComponent } from './form-io-login/form-io-login.component';
 
 
 
@@ -13,7 +14,8 @@ import { SharedModule } from '../shared/modules/shared/shared.module';
   declarations: [
     LoginComponent,
     LoginWrapperComponent,
-    SignupComponent
+    SignupComponent,
+    FormIoLoginComponent
   ],
   imports: [
     LoginRoutingModule,

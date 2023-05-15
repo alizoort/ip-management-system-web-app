@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       this.userName = data.userName;
       this.password = data.password;
       this.authService.login(this.userName,this.password).subscribe(data=>{
-        if(data) this.router.navigate(['/landing']);
+        if(data) this.router.navigate(['/auth/formiologin']);
       })
      }
 }

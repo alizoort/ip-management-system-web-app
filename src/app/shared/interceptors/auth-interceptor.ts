@@ -11,7 +11,9 @@ export class AuthInterceptor implements HttpInterceptor {
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const authToken : string = this.auth.getLocalAuthToken();
         const authReq = req.clone({
-      //      headers: req.headers.set('Authorization',authToken)
+            headers: req.headers.set(
+              "x-jwt-token", localStorage.getItem("ioAuthToken")
+          )
         });
         console.log("INSIDE INTERCEPTOR")
        

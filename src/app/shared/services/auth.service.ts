@@ -20,11 +20,15 @@ export class AuthService extends AppService{
       "password":password
     }).pipe(
       tap((response :any)=> {
-        console.log("Response ",response.accessToken)
-        localStorage.setItem("username",response.username)
-        this.setJwtToken(response.accessToken)
+        console.log("Response ",response.body.accessToken)
+        localStorage.setItem("username",response.body.username)
+        this.setJwtToken(response.body.accessToken)
       })
     )
+  }
+  logout(){
+    this.authToken="";
+    this.setJwtToken("");
   }
   getLoggedInUser(){
     return this.get("/api/auth/loggedInUser").pipe(
