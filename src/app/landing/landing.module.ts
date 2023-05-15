@@ -7,6 +7,7 @@ import { SharedModule } from '../shared/modules/shared/shared.module';
 import { CamundaService } from '../shared/services/camunda.service';
 import { BpmnProcessWrapperComponent } from './bpmn-process-wrapper/bpmn-process-wrapper.component';
 import { GettingStartedComponent } from './getting-started/getting-started.component';
+import { SubmissionRendererComponent } from './submission-renderer/submission-renderer.component';
 
 
 
@@ -16,6 +17,7 @@ import { GettingStartedComponent } from './getting-started/getting-started.compo
     LandingWrapperComponent,
     BpmnProcessWrapperComponent,
     GettingStartedComponent,
+    SubmissionRendererComponent,
   ],
   imports: [
     LandingRoutingModule,

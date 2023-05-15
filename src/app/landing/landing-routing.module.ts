@@ -4,6 +4,7 @@ import { HomeComponent } from "./home/home.component";
 import { LandingWrapperComponent } from "./landing-wrapper/landing-wrapper.component";
 import { GettingStartedComponent } from "./getting-started/getting-started.component";
 import { BpmnProcessWrapperComponent } from "./bpmn-process-wrapper/bpmn-process-wrapper.component";
+import { SubmissionRendererComponent } from "./submission-renderer/submission-renderer.component";
 const routes : Routes =[
     {
         path: '',component: HomeComponent,children: [
@@ -13,6 +14,9 @@ const routes : Routes =[
             },
             {
                 path: 'activeprocess',component: BpmnProcessWrapperComponent
+            },
+            {
+                path:'show',component: SubmissionRendererComponent
             }
         ]
     }

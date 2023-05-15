@@ -17,8 +17,8 @@ export class BpmnProcessWrapperComponent {
         this.authService.getLoggedInUser().subscribe((loggedInUser)=>{
           this.camundaService.getCamundaCurrentTaskScreen(loggedInUser.username,this.bpmnProcessId).subscribe({
             next: (event)=>{
-              
-                Formio.createForm(document.getElementById('formio'),event.currentTaskScreen)
+              console.log("EVENT ",event.currentTaskScreen)
+                Formio.createForm(document.getElementById('formio'),event.body.currentTaskScreen)
                 .then(function(form) {
                   form.on('submit', (submission) => {
                     this.spinnerService.show();

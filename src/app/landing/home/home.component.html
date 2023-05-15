@@ -10,7 +10,11 @@
     </div>
     <div class="sidenav-view">
         <mat-sidenav-container>
-            <mat-sidenav  #sidenav position="end" mode="side" [(opened)]="opened"> This is a drawer </mat-sidenav>
+            <mat-sidenav  #sidenav position="end" mode="side" [(opened)]="opened"> 
+            <div class="list-forms" *ngFor="let form of listOfForms; index as i">
+                <p (click)="showForm($event,i)">{{ 'Simple Form' + i }}</p>
+            </div>    
+            </mat-sidenav>
             <mat-sidenav-content >
                 <router-outlet></router-outlet>
             </mat-sidenav-content>
