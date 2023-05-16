@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { CamundaService } from 'src/app/shared/services/camunda.service';
 
 @Component({
   selector: 'app-getting-started',
@@ -7,8 +8,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./getting-started.component.scss']
 })
 export class GettingStartedComponent {
-  constructor( private router:Router){}
+  constructor( private router:Router,public camundaService:CamundaService){}
     goToBPMNPage(event){
       this.router.navigate(["/landing/activeprocess"])
+    }
+    initiateBPMNInstance(event){
+      this.camundaService.initiateBPMNInstance("IPManagementBusinessProcess").subscribe((data)=>{
+       console.log("INITIATED !!");
+      })
     }
 }

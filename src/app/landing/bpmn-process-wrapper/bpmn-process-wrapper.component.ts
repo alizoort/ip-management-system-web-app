@@ -21,8 +21,9 @@ export class BpmnProcessWrapperComponent {
                 Formio.createForm(document.getElementById('formio'),event.body.currentTaskScreen)
                 .then(function(form) {
                   form.on('submit', (submission) => {
+                    console.log("SUBMISSION ",submission.data.nationalitySelection)
                     this.spinnerService.show();
-                    this.camundaService.completeBpmnInstanceTask(loggedInUser.username,event.currentTaskId,this.bpmnProcessId,[{"name":"nationality","value":"lebanese"}]).subscribe({
+                    this.camundaService.completeBpmnInstanceTask(loggedInUser.username,event.currentTaskId,this.bpmnProcessId,[{"name":"nationality","value":submission.data.nationalitySelection}]).subscribe({
                       next: (response)=>{
                         this.camundaService.getCamundaCurrentTaskScreen(loggedInUser.username,this.bpmnProcessId).subscribe({
                           next: (emittedEvent)=>{

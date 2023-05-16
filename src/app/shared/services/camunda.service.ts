@@ -16,6 +16,11 @@ export class CamundaService extends AppService {
         "bpmnProcessId":bpmnProcessId
     })
   }
+  public initiateBPMNInstance(bpmnProcessId:string){
+    return this.post("/ip-management-system/initiateUserProcess",{
+      "bpmnProcessId":bpmnProcessId
+    })
+  }
   public completeBpmnInstanceTask(username:string,taskId:string,bpmnProcessId:string,decisionVariables:any){
     return this.patch(
       "/ip-management-system/completeProcessInstance",{

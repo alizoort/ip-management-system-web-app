@@ -15,6 +15,7 @@ export class AuthService extends AppService{
     super(http);
   }
   login(userName : string,password: string):Observable<boolean>{
+  console.log("INSIDE LOGIN")
     return this.post("/api/auth/signin",{
       "username": userName,
       "password":password
